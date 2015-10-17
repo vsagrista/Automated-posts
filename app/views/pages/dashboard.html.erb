@@ -1,0 +1,22 @@
+<div class="row">
+	<!-- Profile and connections -->
+	<div class="col-md-2 text-center">
+		<%= image_tag "robot.png", class: "logo" %>
+		<hr>
+		<div class="time-zone">
+			<p class="center"><%= Time.zone.name %> timezone</p>
+			<%= link_to "Change", edit_user_registration_path %>
+		</div>
+		<hr>
+	</div>
+	<!-- New Post and Scheduled -->
+	<div class="col-md-5 text-center">
+		<h3>Scheduled Posts</h3>
+		<hr>
+	</div>
+	<!-- History -->
+	<div class="col-md-5 text-center">
+		<h3>History</h3>
+		<hr>
+	</div>
+</div>
