@@ -8,6 +8,15 @@
 			<%= link_to "Change", edit_user_registration_path %>
 		</div>
 		<hr>
+		<div class="social">
+			<% unless current_user.connections.where(provider: "twitter").any? %>
+			    <%= link_to "Connect with Twitter", "/auth/twitter", class: "btn btn-info btn-block btn-sm" %>
+			<% else %>
+				<%= link_to "Connect with Twitter", "/auth/twitter", class: "btn btn-info btn-block btn-sm", disabled: true %>
+				<%= link_to "Delete Connection", connection_path(current_user.connections.where(provider: "twitter").first), method: :delete %>
+			<% end %>
+			
+		</div>
 	</div>
 	<!-- New Post and Scheduled -->
 	<div class="col-md-5 text-center">
