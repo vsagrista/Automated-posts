@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scheduled_at: 2015-10-27 21:27:50
+  state: MyString
+  user_id: 1
+  facebook: false
+  twitter: false
+
+two:
+  scheduled_at: 2015-10-27 21:27:50
+  state: MyString
+  user_id: 1
+  facebook: false
+  twitter: false
