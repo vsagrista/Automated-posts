@@ -58,3 +58,5 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 gem 'pry'
+
+gem 'validates_timeliness', '~> 3.0'
