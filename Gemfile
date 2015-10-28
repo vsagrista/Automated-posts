@@ -59,6 +59,8 @@ gem 'omniauth-facebook'
 
 gem 'pry'
 
+gem 'twitter'
+
 gem 'validates_timeliness', '~> 3.0'
 
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
