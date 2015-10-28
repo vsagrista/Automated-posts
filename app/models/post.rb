@@ -7,11 +7,12 @@ class Post < ActiveRecord::Base
 
 
 	def to_twitter
+		
 		client = Twitter::REST::Client.new do |config|
-			config.access_token = self.user.twitter.oauth_token
-			config.access_token_secret = self.user.twitter.secret
-			config.consumner_key = ENV['TWITTER_KEY']
-			config.consumner_secret = ENV['TWITTER_SECRET']
+			config.access_token = self.user.twitter[0].oauth_token
+			config.access_token_secret = self.user.twitter[0].secret
+			config.consumer_key = ENV['TWITTER_KEY']
+			config.consumer_secret = ENV['TWITTER_SECRET']
 		end
 		client.update(self.content)
 	end
