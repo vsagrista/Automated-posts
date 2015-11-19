@@ -4,7 +4,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+group :development do
 gem 'sqlite3'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -60,6 +66,10 @@ gem 'omniauth-facebook'
 gem 'pry'
 
 gem 'twitter'
+
+gem 'delayed_job_active_record'
+
+gem 'delayed-web', github: 'thebestday/delayed-web'
 
 gem 'validates_timeliness', '~> 3.0'
 

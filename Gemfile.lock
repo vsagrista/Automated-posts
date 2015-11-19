@@ -16,6 +16,13 @@ GIT
       railties (>= 3.1)
 
 GIT
+  remote: git://github.com/thebestday/delayed-web.git
+  revision: d273088a81542ff1d37a2c3492ffacac77297ee6
+  specs:
+    delayed-web (0.3.0)
+      rails (>= 3.2.13, < 4.3.0)
+
+GIT
   remote: git://github.com/zpaulovics/datetimepicker-rails.git
   revision: 36d21cec5da7f5b214925804f60e63c61c747023
   branch: master
@@ -80,6 +87,11 @@ GEM
     coffee-script-source (1.9.1.1)
     commonjs (0.2.7)
     debug_inspector (0.0.2)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
+      delayed_job (>= 3.0, < 4.1)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -268,6 +280,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   datetimepicker-rails!
+  delayed-web!
+  delayed_job_active_record
   devise
   dotenv-rails
   font-awesome-rails
