@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+	<div class="panel heading">
+		<% if post.twitter == true %><span class="label label-primary">Twitter</span><% end %>
+		Scheduled: <%= post.scheduled_at %>
+	</div>
+	<div class="panel-body">
+		<%= post.content %>
+
+	</div>
+	<div class="panel-footer">
+		<p><%= post.state.capitalize %></p>
+	</div>
+
+</div>
