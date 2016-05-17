@@ -76,3 +76,5 @@ gem 'validates_timeliness', '~> 3.0'
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+
+gem 'will_paginate', '~> 3.1.0'
