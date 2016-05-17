@@ -5,12 +5,13 @@ class PostsController < ApplicationController
     if current_user.connections.any?
       @post = Post.new
     else
-      redirect_to dashboard_path, notice: "Please connect to a social network first"
+      redirect_to dashboard_path, notice: "Please connect to twitter first"
     end
   end
 
   def create
     @post = current_user.posts.new(post_params)
+    @post.twitter = true
     respond_to do |format|
       if @post.save
         format.html {redirect_to dashboard_path, notice: "Your post was successfully created!"}
