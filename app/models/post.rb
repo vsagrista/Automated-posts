@@ -4,10 +4,10 @@ class Post < ActiveRecord::Base
 	validates_presence_of :scheduled_at
 	validates_length_of :content, maximum:140, message: "Less than 140 please"
 	validates_datetime :scheduled_at, :on => :create, :on_or_after => Time.zone.now
-	after_create :schedule 
+	after_create :schedule
 
 	def schedule
-		begin 
+		begin
 			ScheduleJob.set(wait_until: scheduled_at).perform_later(self)
 			self.update_attributes(state: "scheduled")
 		rescue Exception => e
@@ -16,11 +16,13 @@ class Post < ActiveRecord::Base
 	end
 
 	def display
-		begin 
-			if twitter == true
-				to_twitter
+		begin
+			if not state == 'canceled'
+				if twitter == true
+					to_twitter
+				end
+				self.update_attributes(state: "posted")
 			end
-			self.update_attributes(state: "posted")
 		rescue Exception => e
 			self.update_attributes(state: "posting error", error: e.message)
 		end
@@ -29,7 +31,7 @@ class Post < ActiveRecord::Base
 
 
 	def to_twitter
-		
+
 		client = Twitter::REST::Client.new do |config|
 			config.access_token = self.user.twitter[0].oauth_token
 			config.access_token_secret = self.user.twitter[0].secret
