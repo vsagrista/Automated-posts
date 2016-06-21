@@ -1,8 +1,14 @@
 == README
 
 App built with rails using several gems: omniauth, twitter, font awesome, bootstrap, device.
+Steps to get the app running
 
-- Git clone, cd to file, run bundle install
-- Run rake db:migrate
-- Run rails sever and rake jobs:work (the jobs on new tab)
+- Git clone, cd to file
+- Run:
+  $ bundle install
+  $ rake db:migrate
+  $ rails sever
+- On a separate tab, run the worker:
+  $ rake jobs:work
+- Sign up and start tweeting!
 
